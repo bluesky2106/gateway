@@ -4,6 +4,7 @@ radio.onReceivedNumber(function (receivedNumber) {
 })
 serial.onDataReceived(serial.delimiters(Delimiters.Hash), function () {
     cmd = serial.readUntil(serial.delimiters(Delimiters.Hash))
+    basic.showString(cmd)
     radio.sendString(cmd)
 })
 let cmd = ""
